@@ -159,10 +159,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
-    nfc_nci.bcm2079x.msm8916 \
-    libnfc_ndef \
-    libnfc-nci \
-    libnfc_nci_jni \
+    nfc_nci.bcm2079x.default \
     NfcNci \
     Tag \
     com.android.nfc_extras
