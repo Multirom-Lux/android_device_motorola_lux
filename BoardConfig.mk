@@ -64,8 +64,8 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TW_INCLUDE_CRYPTO := true
+#TARGET_HW_DISK_ENCRYPTION := true
+#TW_INCLUDE_CRYPTO := true
 
 # TWRP
 TW_THEME := portrait_hdpi
@@ -73,5 +73,16 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TW_NEW_ION_HEAP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_SCREEN_BLANK_ON_BOOT := true
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/motorola/lux/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_FSTAB := device/motorola/lux/multirom/mrom.fstab
+MR_KEXEC_MEM_MIN := 0x82000000
+MR_KEXEC_DTB := true
+MR_USE_MROM_FSTAB := true
+TARGET_RECOVERY_IS_MULTIROM := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
