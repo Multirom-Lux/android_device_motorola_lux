@@ -1,3 +1,14 @@
+service qseecomd /sbin/qseecomd
+
+on init
+    mkdir /vendor/firmware
+    mkdir /vendor/firmware/keymaster
+    symlink /firmware/image/keymaster.b00 /vendor/firmware/keymaster/keymaster.b00
+    symlink /firmware/image/keymaster.b01 /vendor/firmware/keymaster/keymaster.b01
+    symlink /firmware/image/keymaster.b02 /vendor/firmware/keymaster/keymaster.b02
+    symlink /firmware/image/keymaster.b03 /vendor/firmware/keymaster/keymaster.b03
+    symlink /firmware/image/keymaster.mdt /vendor/firmware/keymaster/keymaster.mdt
+
 on boot
     write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/module/cluster_plug/parameters/active 0
