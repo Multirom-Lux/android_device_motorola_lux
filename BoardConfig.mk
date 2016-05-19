@@ -83,6 +83,8 @@ MR_FSTAB := device/motorola/lux/multirom/mrom.fstab
 MR_KEXEC_MEM_MIN := 0x82000000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
+MR_CONTINUOUS_FB_UPDATE := true
+MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 TARGET_RECOVERY_IS_MULTIROM := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
