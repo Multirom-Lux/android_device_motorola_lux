@@ -85,6 +85,7 @@ MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
 MR_CONTINUOUS_FB_UPDATE := true
 MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_NO_KEXEC := 5
 TARGET_RECOVERY_IS_MULTIROM := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
