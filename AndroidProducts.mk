@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lux.mk
+    $(LOCAL_DIR)/tipsy.mk

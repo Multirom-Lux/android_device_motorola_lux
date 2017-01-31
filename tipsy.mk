@@ -15,8 +15,16 @@
 #
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/tipsy/config/common_full_phone.mk)
 
 $(call inherit-product, device/motorola/lux/full_lux.mk)
 
-PRODUCT_NAME := omni_lux
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := lux
+PRODUCT_NAME := tipsy_lux
+PRODUCT_BRAND := Motorola
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := lux
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="Moto X Play"

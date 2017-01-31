@@ -40,6 +40,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 TARGET_KERNEL_CONFIG := lux-mini_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -48,7 +49,7 @@ TARGET_USES_MOTOROLA_LOG := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-TARGET_RECOVERY_FSTAB := device/motorola/lux/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -76,16 +77,15 @@ TW_SCREEN_BLANK_ON_BOOT := true
 
 #MultiROM config. MultiROM also uses parts of TWRP config
 MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/motorola/lux/multirom/mr_init_devices.c
+MR_INIT_DEVICES := $(LOCAL_PATH)/multirom/mr_init_devices.c
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
-MR_FSTAB := device/motorola/lux/multirom/mrom.fstab
+MR_FSTAB := $(LOCAL_PATH)/multirom/mrom.fstab
 MR_KEXEC_MEM_MIN := 0x82000000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
 MR_CONTINUOUS_FB_UPDATE := true
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
-MR_NO_KEXEC := 5
+MR_NO_KEXEC := enabled
 TARGET_RECOVERY_IS_MULTIROM := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
