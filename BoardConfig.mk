@@ -42,7 +42,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 TARGET_KERNEL_CONFIG := lux-mini_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 
-BOARD_USES_QCOM_HARDWARE := true
+#BOARD_USES_QCOM_HARDWARE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USES_MOTOROLA_LOG := true
 
